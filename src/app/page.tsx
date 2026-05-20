@@ -107,6 +107,44 @@ export default function Home() {
         </div>
       </section>
 
+      <section className="border-t border-white/10 px-6 py-16 md:px-10 md:py-24">
+        <div className="mx-auto max-w-6xl">
+          <p className="text-xs uppercase tracking-[0.25em] text-white/40 md:text-sm md:tracking-[0.3em]">
+            Core Capabilities
+          </p>
+
+          <h2 className="mt-4 max-w-3xl text-3xl font-semibold md:text-5xl">
+            Capabilities designed for enterprise operations.
+          </h2>
+
+          <div className="mt-10 grid gap-4 md:mt-12 md:grid-cols-2 lg:grid-cols-3">
+            {[
+              "Enterprise Automation",
+              "ERP Integrations",
+              "Messaging Infrastructure",
+              "Payment Systems",
+              "Operational Dashboards",
+              "AI-Driven Internal Tools",
+            ].map((capability) => (
+              <motion.div
+                key={capability}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5 }}
+                className="group rounded-2xl border border-white/10 bg-white/[0.03] p-5 transition hover:border-white/20 hover:bg-white/[0.06] md:p-6"
+              >
+                <div className="mb-5 h-px w-10 bg-[#C8A96B] transition group-hover:w-16" />
+
+                <h3 className="text-lg font-medium text-white md:text-xl">
+                  {capability}
+                </h3>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <section className="px-6 py-16 md:px-10 md:py-24">
         <motion.div
           initial={{ opacity: 0, y: 40 }}
