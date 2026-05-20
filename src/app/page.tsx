@@ -1,21 +1,45 @@
+"use client";
+
+import { motion } from "framer-motion";
+
 export default function Home() {
   return (
     <main className="min-h-screen bg-[#050814] text-white">
       <section className="mx-auto flex min-h-screen max-w-6xl flex-col justify-center px-6 py-16 md:px-10 md:py-24">
-        <div className="mb-6 inline-flex w-fit rounded-full border border-white/10 bg-white/5 px-4 py-2 text-xs text-white/70 md:mb-8 md:text-sm">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="mb-6 inline-flex w-fit rounded-full border border-white/10 bg-white/5 px-4 py-2 text-xs text-white/70 md:mb-8 md:text-sm"
+        >
           Enterprise Operational Intelligence
-        </div>
+        </motion.div>
 
-        <h1 className="max-w-4xl text-4xl font-semibold tracking-tight md:text-7xl">
+        <motion.h1
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.1 }}
+          className="max-w-4xl text-4xl font-semibold tracking-tight md:text-7xl"
+        >
           Valenzia builds intelligent systems for modern operations.
-        </h1>
+        </motion.h1>
 
-        <p className="mt-6 max-w-2xl text-base leading-7 text-white/65 md:mt-8 md:text-lg md:leading-8">
+        <motion.p
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          className="mt-6 max-w-2xl text-base leading-7 text-white/65 md:mt-8 md:text-lg md:leading-8"
+        >
           We design automation, integrations and digital infrastructure for
           companies that need more control, speed and operational intelligence.
-        </p>
+        </motion.p>
 
-        <div className="mt-8 flex flex-col gap-3 sm:flex-row md:mt-10">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.3 }}
+          className="mt-8 flex flex-col gap-3 sm:flex-row md:mt-10"
+        >
           <a
             href="mailto:contato@valenzia.com.br"
             className="w-full rounded-full bg-white px-6 py-3 text-center text-sm font-medium text-[#050814] transition hover:bg-white/90 sm:w-auto"
@@ -29,7 +53,7 @@ export default function Home() {
           >
             Explore our focus
           </a>
-        </div>
+        </motion.div>
       </section>
 
       <section
@@ -63,8 +87,12 @@ export default function Home() {
                   "Official WhatsApp integrations, campaign engines and customer communication flows.",
               },
             ].map((item) => (
-              <div
+              <motion.div
                 key={item.title}
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6 }}
                 className="rounded-2xl border border-white/10 bg-white/[0.04] p-5 md:rounded-3xl md:p-6"
               >
                 <h3 className="text-lg font-medium md:text-xl">
@@ -73,14 +101,20 @@ export default function Home() {
                 <p className="mt-3 text-sm leading-6 text-white/55 md:mt-4 md:text-base md:leading-7">
                   {item.description}
                 </p>
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>
       </section>
 
       <section className="px-6 py-16 md:px-10 md:py-24">
-        <div className="mx-auto grid max-w-6xl gap-8 md:grid-cols-2 md:gap-10">
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7 }}
+          className="mx-auto grid max-w-6xl gap-8 md:grid-cols-2 md:gap-10"
+        >
           <div>
             <p className="text-xs uppercase tracking-[0.25em] text-white/40 md:text-sm md:tracking-[0.3em]">
               Operational Intelligence
@@ -96,7 +130,7 @@ export default function Home() {
             observable and intelligent digital environments. Our work combines
             software engineering, automation, APIs and data-driven execution.
           </p>
-        </div>
+        </motion.div>
       </section>
 
       <section className="border-t border-white/10 px-6 py-16 md:px-10 md:py-20">
